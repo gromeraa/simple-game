@@ -8,17 +8,24 @@ let tentativa = 1;
 while (chute != numeroSecreto) {
     chute = prompt("Digite um número entre 0 e 10");
 
-
     if (chute == numeroSecreto) {
-    alert(`Você acertou! ${numeroSecreto} é o número secreto! Com apenas ${tentativa} tentativas!`);
-} else {
-    if (chute > numeroSecreto) {
-        alert(`O número secreto é menor do que ${chute}!`);
+        break;
     } else {
-        alert(`O número secreto é maior do que ${chute}!`);
+        if (chute > numeroSecreto) {
+            alert(`O número secreto é menor do que ${chute}!`);
+        } else {
+            alert(`O número secreto é maior do que ${chute}!`);
+        }
+
+        tentativa++;
     }
-    tentativa++;
-}
 }
 
+let palavraTentativa = tentativa > 1 ? "tentativas" : "tentativa";
+alert(`Parabéns! Você acertou o número secreto ${numeroSecreto} em ${tentativa} ${palavraTentativa}!`);
 
+/* if (tentativa > 1) {
+    alert(`Parabéns! Você acertou o número secreto ${numeroSecreto} em ${tentativa} tentativas!`);
+} else {
+    alert(`Parabéns! Você acertou o número secreto ${numeroSecreto} em ${tentativa} tentativa!`);
+} */
